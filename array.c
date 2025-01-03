@@ -7,8 +7,10 @@
 void welcomeScreen();
 void screenCleaner();
 void userInput(int );
+int isArrayFull();
 
 int array[20] = {0};
+int counter = 0;
 
 void main() {
     welcomeScreen();
@@ -64,6 +66,30 @@ label1:
 
     } 
 
+}
+
+void userInput(int choice) {
+
+    int flag, choice1;
+
+    screenCleaner();
+    flag = isArrayFull();
+
+    if(flag == 1) {
+        printf("Alert! Array is full.\n");
+        printf("Press any key to continue...");
+        getch();
+        welcomeScreen();
+    } 
+
+    printf("-- Insertion\n\n");
+    printf("Options: \n");
+    printf("> 1. At the beginning.\n");
+    printf("> 2. At a specific index.\n");
+    printf("> 3. At the end.\n");
+    printf("> 4. In a sorted array.\n\n");
+    printf("Enter your choice: ");
+    scanf("%d", &choice1);
 }
 
 void screenCleaner() {
