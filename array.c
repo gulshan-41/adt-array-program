@@ -6,7 +6,9 @@
 
 void welcomeScreen();
 void screenCleaner();
-void userInput(int );
+void insertion();
+void atBeginning();
+void printA();
 int isArrayFull();
 
 int array[20] = {0};
@@ -41,19 +43,19 @@ label1:
 
     switch(choice) {
         case 1: 
-            userInput(1);
+            insertion();
             break;
         case 2: 
-            userInput(2);
+            deletion();
             break;
         case 3:
-            userInput(3);
+            search();
             break;
         case 4:
-            userInput(4);
+            reverse();
             break;
         case 5:
-            userInput(5);
+            min_max();
             break;
         case 6:
             exit(0);
@@ -68,7 +70,7 @@ label1:
 
 }
 
-void userInput(int choice) {
+void insertion() {
 
     int flag, choice1;
 
@@ -90,6 +92,13 @@ void userInput(int choice) {
     printf("> 4. In a sorted array.\n\n");
     printf("Enter your choice: ");
     scanf("%d", &choice1);
+
+    switch(choice1) {
+        case 1:
+            atBeginning();
+            printA();
+            break;
+    }
 }
 
 void screenCleaner() {
