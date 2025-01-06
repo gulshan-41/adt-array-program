@@ -16,6 +16,7 @@ void atEnd();
 void deletion();
 void theFirstElement();
 void aSpecificIndexValue();
+void lastElement();
 
 void printA();
 int isArrayFull();
@@ -245,6 +246,11 @@ label3:
             printA();
             tryAgain(2);
             break;
+        case 3:
+            lastElement();
+            printA();
+            tryAgain(2);
+            break;
         default:
             printf("\nError! choose from the given options.");
             printf("\nPress any key to continue...");
@@ -279,8 +285,12 @@ void aSpecificIndexValue() {
         }
         tail--;
     }
+}
 
-    
+void lastElement() {
+
+    array[tail] = 0;
+    tail--;
 }
 
 void tryAgain(int choice) {
