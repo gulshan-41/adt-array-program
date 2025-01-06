@@ -15,6 +15,7 @@ void atEnd();
 
 void deletion();
 void theFirstElement();
+void aSpecificIndexValue();
 
 void printA();
 int isArrayFull();
@@ -239,6 +240,11 @@ label3:
             printA();
             tryAgain(2);
             break;
+        case 2:
+            aSpecificIndexValue();
+            printA();
+            tryAgain(2);
+            break;
         default:
             printf("\nError! choose from the given options.");
             printf("\nPress any key to continue...");
@@ -254,6 +260,27 @@ void theFirstElement() {
         array[i] = array[i + 1];
     }
     tail--;
+}
+
+void aSpecificIndexValue() {
+    int i, di;
+
+    printf("\nindex: ");
+    scanf("%d", &di);
+
+    if(di > tail) {
+        printf("\nWarning: Enter a valid index!");
+        printf("\nPress any key to continue...");
+        getch();
+        deletion();
+    } else {
+        for(i = di; i < tail; i++) {
+            array[i] = array[i + 1];
+        }
+        tail--;
+    }
+
+    
 }
 
 void tryAgain(int choice) {
