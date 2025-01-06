@@ -11,6 +11,7 @@ void tryAgain();
 void insertion();
 void atBeginning();
 void atSpecificIndex();
+void atEnd();
 
 void printA();
 int isArrayFull();
@@ -39,9 +40,10 @@ label1:
     printf("> 1. Insertion.\n");
     printf("> 2. Deletion.\n");
     printf("> 3. Search an element\n");
-    printf("> 4. Reverse the array.\n");
-    printf("> 5. Min/max values.\n");
-    printf("> 6. Exit the program.\n\n");
+    printf("> 4. Sort.");
+    printf("> 5. Reverse the array.\n");
+    printf("> 6. Min/max values.\n");
+    printf("> 7. Exit the program.\n\n");
 
     printf("*NOTE: Before choosing options like deletion, searching,\n"
            "reverse the array, must insert enough elements.\n\n");
@@ -60,12 +62,15 @@ label1:
         //     search();
         //     break;
         // case 4:
-        //     reverse();
+        //     sort();
         //     break;
         // case 5:
+        //     reverse();
+        //     break;
+        // case 6:
         //     min_max();
         //     break;
-        case 6:
+        case 7:
             exit(0);
             break;
         default:
@@ -122,8 +127,7 @@ label2:
     printf("> 1. At the beginning.\n");
     printf("> 2. At a specific index.\n");
     printf("> 3. At the end.\n");
-    printf("> 4. In a sorted array.\n");
-    printf("> 5. exit from this section.\n\n");
+    printf("> 4. exit from this section.\n\n");
     printf("Enter your choice: ");
     scanf("%d", &choice1);
 
@@ -135,6 +139,11 @@ label2:
             break;
         case 2:
             atSpecificIndex();
+            printA();
+            tryAgain();
+            break;
+        case 3:
+            atEnd();
             printA();
             tryAgain();
             break;
@@ -188,6 +197,16 @@ void atSpecificIndex() {
         array[idx] = data;
         tail++;
     }
+}
+
+void atEnd() {
+    int data;
+
+    printf("\ndata: ");
+    scanf("%d", &data);
+
+    array[tail + 1] = data;
+    tail++;
 }
 
 void tryAgain() {
