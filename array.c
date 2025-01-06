@@ -6,12 +6,15 @@
 
 void welcomeScreen();
 void screenCleaner();
-void tryAgain();
+void tryAgain(int );
 
 void insertion();
 void atBeginning();
 void atSpecificIndex();
 void atEnd();
+
+void deletion();
+void theFirstElement();
 
 void printA();
 int isArrayFull();
@@ -28,7 +31,6 @@ void main() {
 }
 
 void welcomeScreen() {
-
     int choice;
 
 label1:
@@ -55,9 +57,9 @@ label1:
         case 1: 
             insertion();
             break;
-        // case 2: 
-        //     deletion();
-        //     break;
+        case 2: 
+            deletion();
+            break;
         // case 3:
         //     search();
         //     break;
@@ -109,7 +111,6 @@ void printA() {
 }
 
 void insertion() {
-
     int choice1;
 
     screenCleaner();
@@ -135,19 +136,19 @@ label2:
         case 1:
             atBeginning();
             printA();
-            tryAgain();
+            tryAgain(1);
             break;
         case 2:
             atSpecificIndex();
             printA();
-            tryAgain();
+            tryAgain(1);
             break;
         case 3:
             atEnd();
             printA();
-            tryAgain();
+            tryAgain(1);
             break;
-        case 5:
+        case 4:
             welcomeScreen();
             break;
         default:
@@ -209,7 +210,53 @@ void atEnd() {
     tail++;
 }
 
-void tryAgain() {
+void deletion() {
+    int choice2;
+
+    screenCleaner();
+
+    if(isArrayEmpty()) {
+        printf("Alert! Array is empty.\n");
+        printf("Press any key to continue...");
+        getch();
+        welcomeScreen();
+    } 
+label3:
+    screenCleaner();
+    printf("-- Deletion.\n\n");
+    printf("Options: \n");
+    printf("> 1. The first element.\n");
+    printf("> 2. A specific index value.\n");
+    printf("> 3. The last element.\n");
+    printf("> 4. a specific element.\n");
+    printf("> 5. exit from this section.\n\n");
+    printf("Enter your choice: ");
+    scanf("%d", &choice2);
+
+    switch(choice2) {
+        case 1:
+            theFirstElement();
+            printA();
+            tryAgain(2);
+            break;
+        default:
+            printf("\nError! choose from the given options.");
+            printf("\nPress any key to continue...");
+            getch();
+            goto label3;
+    }
+}
+
+void theFirstElement() {
+    int i;
+
+    for(i = 0; i <= tail; i++) {
+        array[i] = array[i + 1];
+    }
+    tail--;
+}
+
+void tryAgain(int choice) {
     char ch;
 
     printf("\nDo you want to try again [y/N]: ");
@@ -218,7 +265,11 @@ void tryAgain() {
     switch(ch) {
         case 'y':
         case 'Y':
-            insertion();
+            if(choice == 1) {
+                insertion();
+            } else {
+                deletion();
+            }
             break;
         case 'n':
         case 'N':
