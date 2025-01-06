@@ -10,6 +10,7 @@ void tryAgain();
 
 void insertion();
 void atBeginning();
+void atSpecificIndex();
 
 void printA();
 int isArrayFull();
@@ -132,6 +133,11 @@ label2:
             printA();
             tryAgain();
             break;
+        case 2:
+            atSpecificIndex();
+            printA();
+            tryAgain();
+            break;
         case 5:
             welcomeScreen();
             break;
@@ -156,9 +162,32 @@ void atBeginning() {
         for(i = tail; i >= head; i--) {
             array[i + 1] = array[i];
         }
+        array[0] = data;
         tail++;
     }
     
+}
+
+void atSpecificIndex() {
+    int i, idx, data;
+
+    printf("\nindex: ");
+    scanf("%d", &idx);
+    printf("data: ");
+    scanf("%d", &data);
+
+    if(idx > tail) {
+        printf("\nWarning: Enter a valid index!");
+        printf("\nPress any key to continue...");
+        getch();
+        insertion();
+    } else {
+        for(i = tail; i >= idx; i--) {
+            array[i + 1] = array[i];
+        }
+        array[idx] = data;
+        tail++;
+    }
 }
 
 void tryAgain() {
