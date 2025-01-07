@@ -24,6 +24,8 @@ void sort();
 void quickSort(int , int );
 int partition(int , int );
 
+void reverse();
+
 void printA();
 int isArrayFull();
 int isArrayEmpty();
@@ -74,9 +76,9 @@ label1:
         case 4:
             sort();
             break;
-        // case 5:
-        //     reverse();
-        //     break;
+        case 5:
+            reverse();
+            break;
         // case 6:
         //     min_max();
         //     break;
@@ -119,9 +121,9 @@ void printA() {
 }
 
 void insertion() {
-    int choice1;
-
     screenCleaner();
+    
+    int choice1;
 
     if(isArrayFull()) {
         printf("Alert! Array is full.\n");
@@ -219,9 +221,9 @@ void atEnd() {
 }
 
 void deletion() {
-    int choice2;
-
     screenCleaner();
+
+    int choice2;
 
     if(isArrayEmpty()) {
         printf("Alert! Array is empty.\n");
@@ -388,6 +390,41 @@ int partition(int low, int high) {
     array[high] = temp;
 
     return(i + 1);
+}
+
+void reverse() {
+    screenCleaner();
+
+    int left, right, temp = 0;
+
+    left = head;
+    right = tail;
+
+    if(isArrayEmpty()) {
+        printf("Alert! Array is empty.\n");
+        printf("Press any key to continue...");
+        getch();
+        welcomeScreen();
+    }
+
+    printf("\nArray: |");
+    printA();
+
+    while(left < right) {
+        temp = array[left];
+        array[left] = array[right];
+        array[right] = temp;
+
+        left++;
+        right--;
+    }
+
+    printf("\nArray: |");
+    printA();
+
+    printf("\nPress any key to continue...");
+    getch();
+    welcomeScreen();
 }
 
 void tryAgain(int choice) {
