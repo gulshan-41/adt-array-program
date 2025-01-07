@@ -18,6 +18,8 @@ void theFirstElement();
 void aSpecificIndexValue();
 void lastElement();
 
+void search();
+
 void printA();
 int isArrayFull();
 int isArrayEmpty();
@@ -44,7 +46,7 @@ label1:
     printf("> 1. Insertion.\n");
     printf("> 2. Deletion.\n");
     printf("> 3. Search an element\n");
-    printf("> 4. Sort.");
+    printf("> 4. Sort.\n");
     printf("> 5. Reverse the array.\n");
     printf("> 6. Min/max values.\n");
     printf("> 7. Exit the program.\n\n");
@@ -62,9 +64,9 @@ label1:
         case 2: 
             deletion();
             break;
-        // case 3:
-        //     search();
-        //     break;
+        case 3:
+            search();
+            break;
         // case 4:
         //     sort();
         //     break;
@@ -230,8 +232,7 @@ label3:
     printf("> 1. The first element.\n");
     printf("> 2. A specific index value.\n");
     printf("> 3. The last element.\n");
-    printf("> 4. a specific element.\n");
-    printf("> 5. exit from this section.\n\n");
+    printf("> 4. exit from this section.\n\n");
     printf("Enter your choice: ");
     scanf("%d", &choice2);
 
@@ -250,6 +251,9 @@ label3:
             lastElement();
             printA();
             tryAgain(2);
+            break;
+        case 4:
+            welcomeScreen();
             break;
         default:
             printf("\nError! choose from the given options.");
@@ -291,6 +295,41 @@ void lastElement() {
 
     array[tail] = 0;
     tail--;
+}
+
+void search() {
+    int i, target, flag = 0;
+
+    if(isArrayEmpty()) {
+        printf("Alert! Array is empty.\n");
+        printf("Press any key to continue...");
+        getch();
+        welcomeScreen();
+    }
+
+    screenCleaner();
+    printf("\nArray: | ");
+    printA();
+
+    printf("\nelement: ");
+    scanf("%d", &target);
+
+    for(i = 0; i <= tail; i++) {
+        if(array[i] == target) {
+            flag++;
+            break;
+        }
+    }
+
+    if(flag == 1) {
+        printf("\nat index[%d]: %d\n", i, array[i]);
+    } else {
+        printf("\nelement not found!");
+    }
+
+    printf("\nPress any key to continue...");
+    getch();
+    welcomeScreen();
 }
 
 void tryAgain(int choice) {
