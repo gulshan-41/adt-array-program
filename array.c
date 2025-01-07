@@ -20,6 +20,10 @@ void lastElement();
 
 void search();
 
+void sort();
+void quickSort(int , int );
+int partition(int , int );
+
 void printA();
 int isArrayFull();
 int isArrayEmpty();
@@ -67,9 +71,9 @@ label1:
         case 3:
             search();
             break;
-        // case 4:
-        //     sort();
-        //     break;
+        case 4:
+            sort();
+            break;
         // case 5:
         //     reverse();
         //     break;
@@ -322,7 +326,7 @@ void search() {
     }
 
     if(flag == 1) {
-        printf("\nat index[%d]: %d\n", i, array[i]);
+        printf("\nat index[%d]: %d", i, array[i]);
     } else {
         printf("\nelement not found!");
     }
@@ -330,6 +334,60 @@ void search() {
     printf("\nPress any key to continue...");
     getch();
     welcomeScreen();
+}
+
+void sort() {
+    screenCleaner();
+
+    if(isArrayEmpty()) {
+        printf("Alert! Array is empty.\n");
+        printf("Press any key to continue...");
+        getch();
+        welcomeScreen();
+    }
+
+    printf("\nArray: |");
+    printA();
+
+    quickSort(head, tail);
+
+    printf("\nArray: |");
+    printA();
+
+    printf("\nPress any key to continue...");
+    getch();
+    welcomeScreen();
+}
+
+void quickSort(int low, int high) {
+    int pi; 
+
+    if(low < high) {
+        pi = partition(low, high);
+        quickSort(low, pi - 1);
+        quickSort(pi + 1, high);
+    }
+}
+
+int partition(int low, int high) {
+    int pivot, i, j, temp;
+
+    pivot = array[high];
+    i = (low - 1);
+
+    for(j = low; j < high; j++) {
+        if(array[j] <= pivot) {
+            i++;
+            temp = array[i];
+            array[i] = array[j];
+            array[j] = temp;
+        }
+    }
+    temp = array[i + 1];
+    array[i + 1] = array[high];
+    array[high] = temp;
+
+    return(i + 1);
 }
 
 void tryAgain(int choice) {
