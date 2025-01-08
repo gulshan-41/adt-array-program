@@ -26,6 +26,8 @@ int partition(int , int );
 
 void reverse();
 
+void min_max();
+
 void printA();
 int isArrayFull();
 int isArrayEmpty();
@@ -79,9 +81,9 @@ label1:
         case 5:
             reverse();
             break;
-        // case 6:
-        //     min_max();
-        //     break;
+        case 6:
+            min_max();
+            break;
         case 7:
             exit(0);
             break;
@@ -114,6 +116,7 @@ int isArrayEmpty() {
 void printA() {
     int i;
     
+    printf("\nArray: |");
     for(i = head; i <= tail; i++) {
         printf(" %d |", array[i]);
     }
@@ -122,7 +125,7 @@ void printA() {
 
 void insertion() {
     screenCleaner();
-    
+
     int choice1;
 
     if(isArrayFull()) {
@@ -314,7 +317,6 @@ void search() {
     }
 
     screenCleaner();
-    printf("\nArray: | ");
     printA();
 
     printf("\nelement: ");
@@ -348,12 +350,10 @@ void sort() {
         welcomeScreen();
     }
 
-    printf("\nArray: |");
     printA();
 
     quickSort(head, tail);
 
-    printf("\nArray: |");
     printA();
 
     printf("\nPress any key to continue...");
@@ -407,7 +407,6 @@ void reverse() {
         welcomeScreen();
     }
 
-    printf("\nArray: |");
     printA();
 
     while(left < right) {
@@ -419,8 +418,44 @@ void reverse() {
         right--;
     }
 
-    printf("\nArray: |");
     printA();
+
+    printf("\nPress any key to continue...");
+    getch();
+    welcomeScreen();
+}
+
+void min_max() {
+    screenCleaner();
+
+    int i, min, max;
+
+    if(isArrayEmpty()) {
+        printf("Alert! Array is empty.\n");
+        printf("Press any key to continue...");
+        getch();
+        welcomeScreen();
+    }
+
+    printA();
+
+    min = array[0];
+
+    for(i = 1; i <= tail; i++) {
+        if(array[i] < min) {
+            min = array[i];
+        }
+    }
+    printf("\nmin: %d", min);
+
+    max = array[0];
+
+    for(i = 1; i <= tail; i++) {
+        if(array[i] > max) {
+            max = array[i];
+        }
+    }
+    printf("\nmax: %d", max);
 
     printf("\nPress any key to continue...");
     getch();
