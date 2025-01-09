@@ -17,6 +17,7 @@ void deletion();
 void theFirstElement();
 void aSpecificIndexValue();
 void lastElement();
+void specificElement();
 
 void search();
 
@@ -241,7 +242,8 @@ label3:
     printf("> 1. The first element.\n");
     printf("> 2. A specific index value.\n");
     printf("> 3. The last element.\n");
-    printf("> 4. exit from this section.\n\n");
+    printf("> 4. A specific element.\n");
+    printf("> 5. exit from this section.\n\n");
     printf("Enter your choice: ");
     scanf("%d", &choice2);
 
@@ -262,6 +264,11 @@ label3:
             tryAgain(2);
             break;
         case 4:
+            specificElement();
+            printA();
+            tryAgain(2);
+            break;
+        case 5:
             welcomeScreen();
             break;
         default:
@@ -293,7 +300,7 @@ void aSpecificIndexValue() {
         getch();
         deletion();
     } else {
-        for(i = di; i < tail; i++) {
+        for(i = di; i <= tail; i++) {
             array[i] = array[i + 1];
         }
         tail--;
@@ -304,6 +311,32 @@ void lastElement() {
 
     array[tail] = 0;
     tail--;
+}
+
+void specificElement() {
+    int i, j, element, flag = 0;
+
+    printf("\nelement: ");
+    scanf("%d", &element);
+
+    for(i = 0; i <= tail; i++) {
+        if(array[i] == element) {
+            flag++;
+            break;
+        }
+    }
+
+    if(flag == 1) {
+        for(j = i; j <= tail; j++) {
+            array[j] = array[j + 1];
+        }
+        tail--;
+    } else {
+        printf("\nWarning: Element not found!");
+        printf("\nPress any key to continue...");
+        getch();
+        deletion();
+    }
 }
 
 void search() {
