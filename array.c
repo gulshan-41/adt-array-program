@@ -1,48 +1,63 @@
 // Implementing array - abstract data type.
 
-#include <stdio.h>
-#include <conio.h>
-#include <stdlib.h>
+#include <stdio.h>      // for: input & output.
+#include <conio.h>      // for: getch();
+#include <stdlib.h>     // for: exit(), system();
 
-void welcomeScreen();
-void screenCleaner();
-void tryAgain(int );
+void welcomeScreen();       // Introduction page & choice screen.
+void screenCleaner();       // Clear the console screen & input buffer.
+void tryAgain(int );        // Try again choice
 
+// Insertion choice screen & function.
 void insertion();
 void atBeginning();
 void atSpecificIndex();
 void atEnd();
 
+// Deletion choice screen & function.
 void deletion();
 void theFirstElement();
 void aSpecificIndexValue();
 void lastElement();
 void specificElement();
 
+// Search function.
 void search();
 
+// Sort function (- quick sort algorithm).
 void sort();
 void quickSort(int , int );
 int partition(int , int );
 
+// Reverse function.
 void reverse();
 
+// Returns min & max values.
 void min_max();
 
+
+// Print array element (- linear fashion);
 void printA();
+
+// Checker function.
 int isArrayFull();
 int isArrayEmpty();
 
+// Defining fixed size array.
 #define n 20
 
+// Globally declaring array and pointers,
+// reducing the number of parameters +acessibility accross functions.
 int array[n] = {0};
 int head = 0;
 int tail = -1;
 
+// C-program main function.
 void main() {
     welcomeScreen();
 }
 
+// Welcome screen.
 void welcomeScreen() {
     int choice;
 
@@ -66,6 +81,7 @@ label1:
     printf("Enter your choice: ");
     scanf("%d", &choice);
 
+    // Calls functions as per user input.
     switch(choice) {
         case 1: 
             insertion();
@@ -98,6 +114,7 @@ label1:
 
 }
 
+// Checker functions.
 int isArrayFull() {
     if(tail >= n - 1) {
         return 1;
@@ -114,6 +131,7 @@ int isArrayEmpty() {
     }
 }
 
+// Display resultant array.
 void printA() {
     int i;
     
@@ -124,6 +142,7 @@ void printA() {
     printf("\n");
 }
 
+// Insertion function, including specific operations.
 void insertion() {
     screenCleaner();
 
@@ -224,6 +243,7 @@ void atEnd() {
     tail++;
 }
 
+// Deletion function, including specific operations.
 void deletion() {
     screenCleaner();
 
@@ -339,6 +359,7 @@ void specificElement() {
     }
 }
 
+// Search specific element, returns it's index value.
 void search() {
     int i, target, flag = 0;
 
@@ -373,6 +394,7 @@ void search() {
     welcomeScreen();
 }
 
+// Sort the array in ascending order & displays the result, before & after.
 void sort() {
     screenCleaner();
 
@@ -425,6 +447,7 @@ int partition(int low, int high) {
     return(i + 1);
 }
 
+// Reverse the array & displays the result, before & after.
 void reverse() {
     screenCleaner();
 
@@ -458,6 +481,7 @@ void reverse() {
     welcomeScreen();
 }
 
+// Returns the smallest & greatest number.
 void min_max() {
     screenCleaner();
 
@@ -495,6 +519,8 @@ void min_max() {
     welcomeScreen();
 }
 
+
+// Try again program.
 void tryAgain(int choice) {
     char ch;
 
@@ -523,6 +549,6 @@ void tryAgain(int choice) {
 }
 
 void screenCleaner() {
-    system("cls");
-    fflush(stdin);
+    system("cls");      // Clears the console.
+    fflush(stdin);      // Clears the input buffer.
 }
