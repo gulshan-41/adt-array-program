@@ -207,8 +207,7 @@ void atBeginning() {
         }
         array[0] = data;
         tail++;
-    }
-    
+    }  
 }
 
 void atSpecificIndex() {
