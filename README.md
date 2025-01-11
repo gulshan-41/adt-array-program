@@ -15,7 +15,7 @@ A simple C program implementing and demonstrating operations on array.Designed t
 11. [Helper Functions](#helper-functions)
 
 ## Features
-- Operations including: Insertion, Deletion, Traversal, Search, Sort, Reverse, Min/max values.
+- Operations including: [Insertion Operations](#insertion-operations), Deletion, Traversal, Search, Sort, Reverse, Min/max values.
 - Menu-driven program for easy interaction.
 - Simple and clean code structure.
 
