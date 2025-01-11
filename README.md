@@ -354,8 +354,4 @@ void min_max() {
 ## Helper Functions
 - Helper functions include,. printA(), isArrayFull(), isArrayEmpty(), screenCleaner(), tryAgain(int ).
 
-## Contact
-For queries, feel free to reach out:
-- Email: main.gulshan2003@gmail.com
-- Linkedin: [Gulshan Sharma](https://linkedin.com/gulshan sharma)
 
