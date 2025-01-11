@@ -1,6 +1,7 @@
 # adt-array-program
 A simple C program implementing and demonstrating operations on array.Designed to help beginners understand operations related to array.
 
+<!--
 ## Index
 1. [Features](#features)
 2. [Project Structure](#project-structure)
@@ -13,9 +14,10 @@ A simple C program implementing and demonstrating operations on array.Designed t
 9. [Reverse Function](#reverse-function)
 10. [Min/max Function](#min-max-function)
 11. [Helper Functions](#helper-functions)
+-->
 
 ## Features
-- Operations including: [Insertion Operations](#insertion-operations), Deletion, Traversal, Search, Sort, Reverse, Min/max values.
+- Operations including: [Insertion](#insertion-operations), [Deletion](#deletion-operations), [Search](#search-function), [Sort](#search-function), [Reverse](#reverse-function), [min/max](#min-max-function).
 - Menu-driven program for easy interaction.
 - Simple and clean code structure.
 
@@ -29,6 +31,16 @@ adt-array-program/
 ## Requirements
 - **C Compiler** (GCC, MinGW, or any compatible)
 - **VS Code** or any code editor
+
+## Installation Guide
+- Clone the repository using HTTP/SSH URL.
+```bash
+git clone https://github.com/gulshan-41/adt-array-program.git
+```
+- Navigate to the project directory.
+```bash
+cd adt-array-program
+```
 
 ## Program Variables
 - int array[n] = {0};
@@ -342,76 +354,8 @@ void min_max() {
 ## Helper Functions
 - Helper functions include,. printA(), isArrayFull(), isArrayEmpty(), screenCleaner(), tryAgain(int ).
 
-<!--
-# adt-array-program
+## Contact
+For queries, feel free to reach out:
+- Email: main.gulshan2003@gmail.com
+- Linkedin: [Gulshan Sharma](https://linkedin.com/gulshan sharma)
 
-A simple C program that demonstrates array operations using Abstract Data Types (ADT). This project is designed to help beginners understand array manipulation, insertion, and deletion in C programming.
-
-## 🚀 Features
-- Basic array operations: Insertion, Deletion, Traversal
-- Menu-driven program for easy interaction
-- Simple and clean code structure
-
-## 📂 Project Structure
-```
-adt-array-program/
-|-- array.c  # Main program implementing ADT arrays
-|-- README.md  # Project documentation
-```
-
-## 🛠️ Requirements
-- **C Compiler** (GCC, MinGW, or any compatible)
-- **VS Code** or any code editor
-
-## 💻 How to Run
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/gulshan-41/adt-array-program.git
-   ```
-2. Navigate to the project directory:
-   ```bash
-   cd adt-array-program
-   ```
-3. Compile the program:
-   ```bash
-   gcc array.c -o array
-   ```
-4. Run the executable:
-   ```bash
-   ./array
-   ```
-
-## 🤝 Contributing
-We welcome contributions! If you want to enhance this project or fix a bug, follow the steps below:
-
-1. **Fork** the repository.
-2. **Clone** your forked repository:
-   ```bash
-   git clone https://github.com/your-username/adt-array-program.git
-   ```
-3. **Create a new branch** for your feature or fix:
-   ```bash
-   git checkout -b feature-name
-   ```
-4. **Make changes** and **commit**:
-   ```bash
-   git add .
-   git commit -m "Add new feature"
-   ```
-5. **Push** the changes to your fork:
-   ```bash
-   git push origin feature-name
-   ```
-6. Create a **Pull Request** to the main repository.
-
-Refer to [CONTRIBUTING.md](CONTRIBUTING.md) for more details.
-
-## 📬 Contact
-For any queries, feel free to open an issue or reach out at gulshan-41@example.com.
-
----
-
-🌟 **Don't forget to star the repository if you find it useful!**
-
-
--->
