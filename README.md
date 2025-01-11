@@ -1,3 +1,5 @@
+<img src="images/welcomeScreen.png" alt="Program Screenshot" width="600">
+
 # adt-array-program
 A simple C program implementing and demonstrating operations on array.Designed to help beginners understand operations related to array.
 
@@ -354,4 +356,7 @@ void min_max() {
 ## Helper Functions
 - Helper functions include,. printA(), isArrayFull(), isArrayEmpty(), screenCleaner(), tryAgain(int ).
 
+## Contact
+For queries, feel free to reach out <br>
+<img src="https://img.shields.io/badge/-Gmail-EA4335?logo=gmail&logoColor=white&style=for-the-badge" href="https://mgulshan2003@gmail.com" alt="gmail">
 
