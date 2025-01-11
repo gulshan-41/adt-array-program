@@ -1,7 +1,8 @@
-<img src="images/welcomeScreen.png" alt="Program Screenshot">
 
 # adt-array-program
 A simple C program implementing and demonstrating operations on array.Designed to help beginners understand operations related to array.
+
+<img src="images/welcomScreen.png" alt="Program Screenshot">
 
 <!--
 ## Index
