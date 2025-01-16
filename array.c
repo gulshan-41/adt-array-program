@@ -313,7 +313,7 @@ void aSpecificIndexValue() {
     printf("\nindex: ");
     scanf("%d", &di);
 
-    if(di > tail) {
+    if(di > tail + 1) {
         printf("\nWarning: Enter a valid index!");
         printf("\nPress any key to continue...");
         getch();
