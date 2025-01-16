@@ -218,7 +218,7 @@ void atSpecificIndex() {
     printf("data: ");
     scanf("%d", &data);
 
-    if(idx > tail) {
+    if(idx > tail + 1) {
         printf("\nWarning: Enter a valid index!");
         printf("\nPress any key to continue...");
         getch();
@@ -313,7 +313,7 @@ void aSpecificIndexValue() {
     printf("\nindex: ");
     scanf("%d", &di);
 
-    if(di > tail + 1) {
+    if(di < 0 || di > tail + 1) {
         printf("\nWarning: Enter a valid index!");
         printf("\nPress any key to continue...");
         getch();
@@ -322,8 +322,8 @@ void aSpecificIndexValue() {
         for(i = di; i <= tail; i++) {
             array[i] = array[i + 1];
         }
-        tail--;
     }
+    tail--;
 }
 
 void lastElement() {
