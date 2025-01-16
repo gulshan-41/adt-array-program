@@ -360,7 +360,7 @@ void specificElement() {
 
 // Search specific element, returns it's index value.
 void search() {
-    int i, target, flag = 0;
+    int i, target, flag = 0, choice;
 
     if(isArrayEmpty()) {
         printf("Alert! Array is empty.\n");
@@ -383,14 +383,29 @@ void search() {
     }
 
     if(flag == 1) {
-        printf("\nat index[%d]: %d", i, array[i]);
+        printf("\nat index[%d]: %d\n", i, array[i]);
     } else {
-        printf("\nelement not found!");
+        printf("\nelement not found!\n");
     }
 
-    printf("\nPress any key to continue...");
-    getch();
-    welcomeScreen();
+    printf("\n> 1. Continue to search elements.\n");
+    printf("> 2. Exit from this section.\n");
+    printf("\nyour choice: ");
+    scanf("%d", &choice);
+
+    switch(choice) {
+        case 1:
+            search();
+            break;
+        case 2:
+            welcomeScreen();
+            break;
+        default:
+            printf("\nError: Choose from the given options.");
+            printf("\nPress any key to continue...");
+            getch();
+            welcomeScreen();
+    }
 }
 
 // Sort the array in ascending order & displays the result, before & after.
