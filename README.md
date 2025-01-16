@@ -1,8 +1,8 @@
 
 # adt-array-program
-A simple C program implementing and demonstrating operations on array.Designed to help beginners understand operations related to array.
+A simple C program implementing and demonstrating operations on array. Designed to help beginners understand operations related to array.
 
-<img src="images/welcomScreen.png" alt="Program Screenshot">
+<img src="images/welcomeScreen.png" alt="Program Screenshot">
 
 <!--
 ## Index
@@ -54,6 +54,8 @@ cd adt-array-program
 - Program functions include main functions that construct the whole program. That includes,. main(), welcomeScreen(), insertion(), deletion(), search(), sort(), reverse and min_max()
 
 ## Insertion Operations
+
+<img src="images/insertion.png" alt="Program Screenshot">
 
 - At the beginning.
 ```bash
@@ -127,6 +129,8 @@ void atSpecificIndex() {
 ```
 
 ## Deletion Operations
+
+<img src="images/deletion.png" alt="Program Screenshot">
 
 - The first element.
 ```bash
@@ -358,6 +362,9 @@ void min_max() {
 - Helper functions include,. printA(), isArrayFull(), isArrayEmpty(), screenCleaner(), tryAgain(int ).
 
 ## Contact
-For queries, feel free to reach out <br>
-<img src="https://img.shields.io/badge/-Gmail-EA4335?logo=gmail&logoColor=white&style=for-the-badge" href="https://mgulshan2003@gmail.com" alt="gmail">
+For queries, feel free to reach out:
+- Email: main.gulshan2003@gmail.com
+- GitHub: [gulshan-41](https://github.com/gulshan-41)
+
+
 
