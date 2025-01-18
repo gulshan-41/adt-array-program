@@ -20,7 +20,7 @@ A simple C program implementing and demonstrating operations on array. Designed 
 -->
 
 ## Features
-- Operations including: [Insertion](#insertion-operations), [Deletion](#deletion-operations), [Search](#search-function), [Sort](#search-function), [Reverse](#reverse-function), [min/max](#min-max-function).
+- Operations including: [Insertion](#insertion-operations), [Deletion](#deletion-operations), [Search](#search-function), [Sort](#sort-function), [Reverse](#reverse-function), [min/max](#min-max-function).
 - Menu-driven program for easy interaction.
 - Simple and clean code structure.
 
